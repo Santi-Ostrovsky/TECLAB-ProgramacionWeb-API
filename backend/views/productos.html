@@ -12,6 +12,9 @@
     <meta name="robots" content="nofollow">
     <meta name="theme-color" content="#000000" />
     <!--  <meta name="copyright" content=""> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estilos.css">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="">
 </head>
@@ -20,106 +23,96 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
+    <div class="box">
+        <!-- ENCABEZADO -->
+        <header>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <div>
-            <nav id="nav-form-categorias" class="nav">
+            <!-- BARRA DE NAVEGACIÓN -->
+            <div>
+                <nav id="nav-form-categorias" class="nav">
 
-                <!-- HOME -->
-                <div class="nav-item">
-                    <a id="home" href="../../views/home.html">Home</a>
-                </div>
-
-                <!-- FORM CATEGORÍAS -->
-                <div class="nav-item">
-                    <a id="form-categorias" href="/backend/views/categorias.html">Alta de Categorías</a>
-                </div>
-
-            </nav>
-        </div>
-
-    </header>
-
-    <!-- PRINCIPAL -->
-    <main>
-        <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
-        <h1 class="title">Carga de Productos al sistema</h1>
-
-        <!-- FORMULARIO DE CARGA -->
-        <div>
-            <section>
-                <form id="form-carga-productos" action="" method="post" autocomplete="on">
-                    <!-- Inputs requeridos: nombre, imagen, descripción, precio y categoría -->
-
-                    <!-- NOMBRE --> <!-- PATTERN="[a-zA-Z]*" -->
-                    <div>
-                        <label for="nombre-producto">Nombre</label>
-                        <input type="search" name="nombre-producto" id="nombre-poducto" placeholder="Ej: Noblex NL3060"
-                            required>
+                    <!-- HOME -->
+                    <div class="nav-item">
+                        <a id="home" href="../../views/home.html">Home</a>
                     </div>
 
-                    <!-- MARCA -->
-                    <div>
-                        <label for="marca-producto">Marca</label>
-                        <input type="search" name="marca-producto" id="marca-producto" placeholder="Ej: Noblex">
+                    <!-- FORM CATEGORÍAS -->
+                    <div class="nav-item">
+                        <a id="form-categorias" href="/backend/views/categorias.html">Alta de Categorías</a>
                     </div>
 
-                    <!-- MODELO -->
-                    <div>
-                        <label for="modelo-producto">Modelo</label>
-                        <input type="search" name="modelo-producto" id="modelo-producto" placeholder="Ej: 3060">
-                    </div>
+                </nav>
+            </div>
 
-                    <!-- DESCRIPCIÓN -->
-                    <div>
-                        <label for="descripcion-producto">Descripción</label>
-                        <textarea name="descripcion-producto" id="descripcion-producto" cols="50" rows="10"
-                            placeholder="Ej: Monitor último modelo, con diseño innovador, marco minimalista y amplia gama de colores.">
+        </header>
+
+        <!-- PRINCIPAL -->
+        <main>
+            <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
+            <h1 class="title">Carga de Productos al sistema</h1>
+
+            <!-- FORMULARIO DE CARGA -->
+            <div>
+                <section>
+                    <form id="form-carga-productos" action="" method="post" autocomplete="on">
+                        <!-- Inputs requeridos: nombre, imagen, descripción, precio y categoría -->
+
+                        <!-- NOMBRE --> <!-- PATTERN="[a-zA-Z]*" -->
+                        <div>
+                            <label for="nombre-producto">Nombre</label>
+                            <input type="search" name="nombre-producto" id="nombre-producto"
+                                placeholder="Ej: Noblex NL3060">
+                        </div>
+
+                        <!-- DESCRIPCIÓN -->
+                        <div>
+                            <label for="descripcion-producto">Descripción</label>
+                            <textarea name="descripcion-producto" id="descripcion-producto" cols="50" rows="10"
+                                placeholder="Ej: Monitor último modelo, con diseño innovador, marco minimalista y amplia gama de colores.">
                         </textarea>
-                    </div>
+                        </div>
 
-                    <!-- PRECIO -->
-                    <div>
-                        <label for="precio-producto">Precio $</label>
-                        <input type="number" name="precio-producto" id="precio-producto" placeholder="Ej: 2500"
-                            required>
-                    </div>
+                        <!-- PRECIO -->
+                        <div>
+                            <label for="precio-producto">Precio $</label>
+                            <input type="number" name="precio-producto" id="precio-producto" placeholder="Ej: 2500">
+                        </div>
 
-                    <!-- CATEGORÍA -->
-                    <div>
-                        <label for="categoria-producto">Categoría</label>
-                        <input type="text" name="categoria-producto" id="categoria-producto" placeholder="Ej: Monitores"
-                            required>
-                    </div>
+                        <!-- CATEGORÍA -->
+                        <div>
+                            <label for="categoria-producto">Categoría</label>
+                            <input type="text" name="categoria-producto" id="categoria-producto"
+                                placeholder="Ej: Monitores">
+                        </div>
 
-                    <!-- IMAGEN -->
-                    <div>
-                        <label for="imagen-producto">Imagen</label>
-                        <input type="file" accept="image/*" name="imagen-producto" id="imagen-producto" required>
-                    </div>
+                        <!-- IMAGEN -->
+                        <div>
+                            <label for="imagen-producto">Imagen</label>
+                            <input type="file" accept="image/*" name="imagen-producto" id="imagen-producto">
+                        </div>
 
-                    <!-- FORM CONTROL -->
-                    <div id="form-producto-botones">
-                        <input id="productos-reset" class="button" type="reset">
-                        <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
-                        <input id="productos-submit" class="button" type="submit">
-                    </div>
+                        <!-- FORM CONTROL -->
+                        <div id="form-producto-botones">
+                            <input id="productos-reset" class="button" type="reset">
+                            <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
+                            <input id="productos-submit" class="button" type="submit">
+                        </div>
 
-                </form>
-            </section>
-        </div>
-    </main>
+                    </form>
+                </section>
+            </div>
+        </main>
 
-    <!-- PIÉ DE PÁGINA -->
-    <footer>
-        <span class="author">Santiago Ostrovsky</span>
-    </footer>
+        <!-- PIÉ DE PÁGINA -->
+        <footer>
+            <span class="author">Santiago Ostrovsky</span>
+        </footer>
 
-    <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+        <!-- SCRIPTS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+
+    </div>
 </body>
 
 </html>

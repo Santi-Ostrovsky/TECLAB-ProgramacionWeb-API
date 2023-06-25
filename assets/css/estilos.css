@@ -1,16 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap");
+
+* {
+  margin: 10px;
+  font-family: "Oxanium", cursive, sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-image: url(../img/bg.jpg);
 }
 
-* {
-  margin: 10px;
+.box {
+  height: 85vh;
+  width: 30vw;
+  min-width: 450px;
+  margin-top: 50px;
+  background-color: #ffff;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  border: solid red;
 }
 
 img {
-  height: 200px;
+  height: 20vh;
 }
 
 #descripcion-producto {

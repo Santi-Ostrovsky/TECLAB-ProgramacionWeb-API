@@ -12,6 +12,9 @@
     <meta name="robots" content="nofollow">
     <meta name="theme-color" content="#000000" />
     <!--  <meta name="copyright" content=""> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estilos.css">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="">
 </head>
@@ -20,63 +23,66 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
+    <div class="box">
+        <!-- ENCABEZADO -->
+        <header>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <div>
-            <nav id="nav-form-categorias" class="nav">
+            <!-- BARRA DE NAVEGACIÓN -->
+            <div>
+                <nav id="nav-form-categorias" class="nav">
 
-                <!-- HOME -->
-                <div class="nav-item">
-                    <a id="home" href="../../views/home.html">Home</a>
-                </div>
-
-                <!-- FORM PRODUCTOS -->
-                <div class="nav-item">
-                    <a id="form-productos" href="/backend/views/productos.html">Alta de Productos</a>
-                </div>
-
-            </nav>
-        </div>
-
-    </header>
-
-    <!-- PRINCIPAL -->
-    <main>
-        <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
-        <h1 class="title">Carga de Categorías al sistema</h1>
-
-        <!-- FORMULARIO DE CARGA -->
-        <div>
-            <section>
-                <form id="form-carga-categorias" action="" method="post" autocomplete="on">
-
-                    <!-- INPUT NOMBRE CATEGORÍA -->
-                    <label for="nombre-categoria">Nombre</label>
-                    <input type="search" name="nombre-categoria" id="nombre-categoria" placeholder="Ej: Monitores"
-                        pattern="[a-zA-Z]*" required>
-
-                    <!-- FORM CONTROL -->
-                    <div id="form-categoria-botones">
-                        <input id="categorias-reset" class="button" type="reset">
-                        <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
-                        <input id="categorias-submit" class="button" type="submit">
+                    <!-- HOME -->
+                    <div class="nav-item">
+                        <a id="home" href="../../views/home.html">Home</a>
                     </div>
 
-                </form>
-            </section>
-        </div>
-    </main>
+                    <!-- FORM PRODUCTOS -->
+                    <div class="nav-item">
+                        <a id="form-productos" href="/backend/views/productos.html">Alta de Productos</a>
+                    </div>
 
-    <!-- PIÉ DE PÁGINA -->
-    <footer>
-        <span class="author">Santiago Ostrovsky</span>
-    </footer>
+                </nav>
+            </div>
 
-    <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+        </header>
+
+        <!-- PRINCIPAL -->
+        <main>
+            <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
+            <h1 class="title">Carga de Categorías al sistema</h1>
+
+            <!-- FORMULARIO DE CARGA -->
+            <div>
+                <section>
+                    <form id="form-carga-categorias" action="" method="post" autocomplete="on">
+
+                        <!-- INPUT NOMBRE CATEGORÍA -->
+                        <label for="nombre-categoria">Nombre</label>
+                        <input type="search" name="nombre-categoria" id="nombre-categoria" placeholder="Ej: Monitores">
+                        <!-- pattern="[a-zA-Z]*" required -->
+
+                        <!-- FORM CONTROL -->
+                        <div id="form-categoria-botones">
+                            <input id="categorias-reset" class="button" type="reset">
+                            <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
+                            <input id="categorias-submit" class="button" type="submit">
+                        </div>
+
+                    </form>
+                </section>
+            </div>
+        </main>
+
+        <!-- PIÉ DE PÁGINA -->
+        <footer>
+            <span class="author">Santiago Ostrovsky</span>
+        </footer>
+
+        <!-- SCRIPTS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+
+    </div>
 </body>
 
 </html>
