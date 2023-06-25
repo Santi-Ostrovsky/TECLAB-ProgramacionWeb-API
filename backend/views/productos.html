@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompuNation | Alta Productos</title>
+    <meta name="description" content="Alta de nuevos PRODUCTOS.">
+    <meta name="author" content="Santiago Ostrovsky">
+    <!--  <meta name="keywords" content="keywords separadas por coma"> -->
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <meta name="theme-color" content="#000000" />
+    <!--  <meta name="copyright" content=""> -->
+    <link rel="stylesheet" href="../../assets/css/estilos.css">
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="">
+</head>
+
+<!-- CUERPO DEL DOCUMENTO -->
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+
+        <!-- BARRA DE NAVEGACIÓN -->
+        <div>
+            <nav id="nav-form-categorias" class="nav">
+
+                <!-- HOME -->
+                <div class="nav-item">
+                    <a id="home" href="../../views/home.html">Home</a>
+                </div>
+
+                <!-- FORM CATEGORÍAS -->
+                <div class="nav-item">
+                    <a id="form-categorias" href="/backend/views/categorias.html">Alta de Categorías</a>
+                </div>
+
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- PRINCIPAL -->
+    <main>
+        <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
+        <h1 class="title">Carga de Productos al sistema</h1>
+
+        <!-- FORMULARIO DE CARGA -->
+        <div>
+            <section>
+                <form id="form-carga-productos" action="" method="post" autocomplete="on">
+                    <!-- Inputs requeridos: nombre, imagen, descripción, precio y categoría -->
+
+                    <!-- NOMBRE --> <!-- PATTERN="[a-zA-Z]*" -->
+                    <div>
+                        <label for="nombre-producto">Nombre</label>
+                        <input type="search" name="nombre-producto" id="nombre-poducto" placeholder="Ej: Noblex NL3060"
+                            required>
+                    </div>
+
+                    <!-- MARCA -->
+                    <div>
+                        <label for="marca-producto">Marca</label>
+                        <input type="search" name="marca-producto" id="marca-producto" placeholder="Ej: Noblex">
+                    </div>
+
+                    <!-- MODELO -->
+                    <div>
+                        <label for="modelo-producto">Modelo</label>
+                        <input type="search" name="modelo-producto" id="modelo-producto" placeholder="Ej: 3060">
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <div>
+                        <label for="descripcion-producto">Descripción</label>
+                        <textarea name="descripcion-producto" id="descripcion-producto" cols="50" rows="10"
+                            placeholder="Ej: Monitor último modelo, con diseño innovador, marco minimalista y amplia gama de colores.">
+                        </textarea>
+                    </div>
+
+                    <!-- PRECIO -->
+                    <div>
+                        <label for="precio-producto">Precio $</label>
+                        <input type="number" name="precio-producto" id="precio-producto" placeholder="Ej: 2500"
+                            required>
+                    </div>
+
+                    <!-- CATEGORÍA -->
+                    <div>
+                        <label for="categoria-producto">Categoría</label>
+                        <input type="text" name="categoria-producto" id="categoria-producto" placeholder="Ej: Monitores"
+                            required>
+                    </div>
+
+                    <!-- IMAGEN -->
+                    <div>
+                        <label for="imagen-producto">Imagen</label>
+                        <input type="file" accept="image/*" name="imagen-producto" id="imagen-producto" required>
+                    </div>
+
+                    <!-- FORM CONTROL -->
+                    <div id="form-producto-botones">
+                        <input id="productos-reset" class="button" type="reset">
+                        <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
+                        <input id="productos-submit" class="button" type="submit">
+                    </div>
+
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- PIÉ DE PÁGINA -->
+    <footer>
+        <span class="author">Santiago Ostrovsky</span>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+</body>
+
+</html>
