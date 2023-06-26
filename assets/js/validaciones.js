@@ -59,7 +59,7 @@ $("#form-carga-productos").submit(function (e) {
   const CATEGORIA = $("#categoria-producto").val();
   const IMAGEN = $("#imagen-producto").val();
 
-  // Definir Array (Arreglo) de Errores
+  // Declarar Array (Arreglo) de Errores
   const ERRORES = [];
 
   // Detectar envío de Nombre VACÍO
@@ -82,7 +82,7 @@ $("#form-carga-productos").submit(function (e) {
   if (ERRORES.length) {
     intentos_productos += 1;
     alert(
-      `Debe completar ${ERRORES.map(
+      `Debe completar:${ERRORES.map(
         (e) => `\n- ${e}`
       )}\n\nIntentos fallidos: ${intentos_productos}`
     );
