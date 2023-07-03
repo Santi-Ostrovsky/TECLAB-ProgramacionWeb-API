@@ -21,14 +21,14 @@ $("#form-carga-categorias").submit(function (e) {
 
   const CATEGORIA = $("#nombre-categoria").val();
 
-  /* if ($.trim(CATEGORIA) === '') {[...]}
-    VALORES FALSY:
-    - "false"
-    - 0
-    - ""
-    - null
-    - undefined
-    - NaN                               */
+  //    if ($.trim(CATEGORIA) === '') {[...]}
+  //     VALORES FALSY:
+  //     - "false"
+  //     - 0
+  //     - ""
+  //     - null
+  //     - undefined
+  //     - NaN
 
   // Detectar envío de Nombre VACÍO
   if (!$.trim(CATEGORIA)) {
@@ -44,8 +44,6 @@ $("#form-carga-categorias").submit(function (e) {
   this.reset();
   return true;
 });
-
-// EXPLICAR IF(...) SIN "ELSE"
 
 // HANDLER - PRODUCTOS
 $("#form-carga-productos").submit(function (e) {
@@ -94,3 +92,5 @@ $("#form-carga-productos").submit(function (e) {
   this.reset();
   return true;
 });
+
+// ------------------------------------------------
