@@ -67,7 +67,8 @@ $("#form-carga-productos").submit(function (e) {
   if (!$.trim(DESCRIPCION)) ERRORES.push(`"Descripción"`);
 
   // Detectar envío de Precio VACÍO
-  if (!$.trim(PRECIO)) ERRORES.push(`"Precio"`);
+  if (!$.trim(PRECIO) || typeof $.trim(PRECIO) !== "number")
+    ERRORES.push(`"Precio"`);
 
   // Detectar envío de Categoría VACÍO
   if (!$.trim(CATEGORIA)) ERRORES.push(`"Categoría"`);
