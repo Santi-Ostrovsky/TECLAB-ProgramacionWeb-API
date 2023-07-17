@@ -15,10 +15,10 @@ class database {
     // DECLARE FUNCTION TO ESTABLISH DB CONNECTION
     function _construct($driver, $database, $host, $user, $pass) {
         $connection = $driver . ":dbname=" . $database . ";host=$host";
-        $this -> $gbd = new PDO($connection, $user, $pass);
+        $this -> gbd = new PDO($connection, $user, $pass);
     
 
-    if (!$this->$gbd) {
+    if (!$this -> gbd) {
         throw new Exception("No se ha podido realizar la conexión.");
         }
     }
@@ -48,7 +48,6 @@ class database {
 
         if ($resource) return true;
         else throw new Exception("Error al remover los datos.");
-        
     }
 
     // DECLARE INSERT FUNCTION TO ADD NEW DATA TO THE DB

@@ -51,30 +51,24 @@ $("#form-carga-productos").submit(function (e) {
   e.preventDefault();
 
   // Definir constantes por cada campo del form
-  const NOMBRE = $("#nombre-producto").val();
-  const DESCRIPCION = $("#descripcion-producto").val();
-  const PRECIO = $("#precio-producto").val();
-  const CATEGORIA = $("#categoria-producto").val();
-  const IMAGEN = $("#imagen-producto").val();
+  const NOMBRE = $.trim($("#nombre-producto").val());
+  const DESCRIPCION = $.trim($("#descripcion-producto").val());
+  const PRECIO = parseInt($.trim($("#precio-producto").val())); // Remueve letras si hay un número
+  const CATEGORIA = $.trim($("#categoria-producto").val());
+  const IMAGEN = $.trim($("#imagen-producto").val());
 
   // Declarar Array (Arreglo) de Errores
   const ERRORES = [];
-
   // Detectar envío de Nombre VACÍO
-  if (!$.trim(NOMBRE)) ERRORES.push(`"Nombre"`);
-
+  if (!NOMBRE) ERRORES.push(`"Nombre"`);
   // Detectar envío de Descripción VACÍO
-  if (!$.trim(DESCRIPCION)) ERRORES.push(`"Descripción"`);
-
+  if (!DESCRIPCION) ERRORES.push(`"Descripción"`);
   // Detectar envío de Precio VACÍO
-  if (!$.trim(PRECIO) || typeof $.trim(PRECIO) !== "number")
-    ERRORES.push(`"Precio"`);
-
+  if (!PRECIO) ERRORES.push(`"Precio"`);
   // Detectar envío de Categoría VACÍO
-  if (!$.trim(CATEGORIA)) ERRORES.push(`"Categoría"`);
-
+  if (!CATEGORIA) ERRORES.push(`"Categoría"`);
   // Detectar envío de Imagen VACÍO
-  if (!$.trim(IMAGEN)) ERRORES.push(`"Imagen"`);
+  if (!IMAGEN) ERRORES.push(`"Imagen"`);
 
   // Enumerar errores existentes
   // if (ERRORES.length > 0)
