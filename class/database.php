@@ -16,14 +16,14 @@ class database {
     function _construct($driver, $database, $host, $user, $pass) {
         $connection = $driver . ":dbname=" . $database . ";host=$host";
         $this -> gbd = new PDO($connection, $user, $pass);
-    
 
-    if (!$this -> gbd) {
-        throw new Exception("No se ha podido realizar la conexión.");
-        }
+        if (!$this -> gbd) throw new Exception("No se ha podido realizar la conexión.");
     }
 
-    // DECLARE SELECT FUNCTION TO EXTRACT DB DATA
+    // ********************** SQL QUERIES **********************
+    
+    // DECLARE -SELECT- FUNCTION TO EXTRACT DB DATA
+    // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [orden] [ASC | DESC] LIMIT [results_amount]
     function select($tabla, $filtros = null, $arr_prepare = null, $orden = null, $limit = null) {
         $sql = "SELECT * TABLA " . $tabla;
 
@@ -31,28 +31,67 @@ class database {
         if ($filtros != null) $sql .= " WHERE " . $filtros;
         if ($orden != null) $sql .= " ORDER BY " . $orden;
         if ($limit != null) $sql .= " LIMIT " . $limit;
-
+        
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
 
         if ($resource) return $resource -> fetchAll(PDO::FETCH_ASSOC);
         else throw new Exception("No se ha podido realizar la consulta.");
     }
-
-    // DECLARE DELETE FUNCTION TO REMOVE DB DATA
+    
+    // DECLARE -DELETE- FUNCTION TO REMOVE DB DATA
+    // DELETE FROM [table_name] WHERE [condition]
     function delete($tabla, $filtros = null, $arr_prepare = null) {
         $sql = "DELETE FROM" . $tabla . "WHERE" . $filtros;
 
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
-
+        
         if ($resource) return true;
         else throw new Exception("Error al remover los datos.");
     }
 
-    // DECLARE INSERT FUNCTION TO ADD NEW DATA TO THE DB
-    function insert(){}
+    // DECLARE -INSERT- FUNCTION TO ADD NEW DATA TO THE DB
+    // INSERT INTO [table_name] ([columns]) VALUES ([values])
+    function insert($tabla, $campos, $valores, $arr_prepare = null) {
+        $sql = "INSERT INTO" . $tabla . "(" . $campos . ") VALUES ($valores)";
 
-    // DECLARE UPDATE FUNCTION TO MODIFY EXISTING DATA IN THE DB
-    function update(){}
+        $resource = $this -> gbd -> prepare($sql);
+        $resource -> execute($arr_prepare);
+
+        if ($resource) return $this -> gbd -> lastInsertId();
+        else {
+            echo '<pre>';
+            print_r($resource -> errorInfo());
+            echo '</pre>';
+
+            throw new Exception('Error al insertar los datos.');
+        }
+    }
+    
+    // DECLARE -UPDATE- FUNCTION TO MODIFY EXISTING DATA IN THE DB
+    // UPDATE [table_name] SET [column] = [value] WHERE [condition]
+    function update($tabla, $campos, $filtros, $arr_prepare = null) {
+        $sql = "UPDATE" . $tabla . "SET" . $campos . "WHERE" . $filtros;
+
+        $resource = $this -> gbd -> prepare($sql);
+        $resource -> execute($arr_prepare);
+
+        if ($resource) return true;
+        else {
+            echo '<pre>';
+            print_r($resource -> errorInfo());
+            echo '</pre>';
+
+            throw new Exception('Error al actualizar los datos.');
+        }
+    }
+
+    /*
+    ********************** OTHER SQL QUERIES **********************
+    → CREATE TABLE [table_name] ([column 1 datatype constraints], [column 2 datatype constraints], ...)
+    → DROP TABLE [table_name]
+    → ALTER TABLE [table_name] [ADD | ALTER COLUMN | DROP COLUMN] [column_name datatype]
+    → CREATE INDEX, JOIN QUERIES, GROUP BY, etc...
+    */
 }
