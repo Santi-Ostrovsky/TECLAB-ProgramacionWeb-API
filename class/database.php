@@ -1,4 +1,4 @@
-<?php
+<?php /* @autor Santiago Ostrovsky */
 
 // TRY CONNECTION TO REMOTE DB THROUGH DYNAMIC CREDENTIALS
 try {

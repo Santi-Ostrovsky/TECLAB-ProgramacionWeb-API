@@ -1,4 +1,4 @@
-<?php
+<?php /* @autor Santiago Ostrovsky */
 
 // DEFINE 'PRODUCTOS' CLASS
 class Productos {
