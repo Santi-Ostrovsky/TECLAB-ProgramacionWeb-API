@@ -8,11 +8,11 @@ try {
     echo "Conexión fallida!" . $e -> getMessage();
 }
 
-// DECLARE DATABASE CLASS
+// DEFINE DATABASE CLASS
 class database {
     private $gbd;
 
-    // DECLARE FUNCTION TO ESTABLISH DB CONNECTION
+    // DEFINE FUNCTION TO ESTABLISH DB CONNECTION
     function _construct($driver, $database, $host, $user, $pass) {
         $connection = $driver . ":dbname=" . $database . ";host=$host";
         $this -> gbd = new PDO($connection, $user, $pass);
@@ -20,9 +20,9 @@ class database {
         if (!$this -> gbd) throw new Exception("No se ha podido realizar la conexión.");
     }
 
-    // ********************** SQL QUERIES **********************
+    // ********************** BASIC  SQL QUERIES **********************
     
-    // DECLARE -SELECT- FUNCTION TO EXTRACT DB DATA
+    // DEFINE -SELECT- FUNCTION TO EXTRACT DB DATA
     // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [orden] [ASC | DESC] LIMIT [results_amount]
     function select($tabla, $filtros = null, $arr_prepare = null, $orden = null, $limit = null) {
         $sql = "SELECT * TABLA " . $tabla;
@@ -39,7 +39,7 @@ class database {
         else throw new Exception("No se ha podido realizar la consulta.");
     }
     
-    // DECLARE -DELETE- FUNCTION TO REMOVE DB DATA
+    // DEFINE -DELETE- FUNCTION TO REMOVE DB DATA
     // DELETE FROM [table_name] WHERE [condition]
     function delete($tabla, $filtros = null, $arr_prepare = null) {
         $sql = "DELETE FROM" . $tabla . "WHERE" . $filtros;
@@ -51,7 +51,7 @@ class database {
         else throw new Exception("Error al remover los datos.");
     }
 
-    // DECLARE -INSERT- FUNCTION TO ADD NEW DATA TO THE DB
+    // DEFINE -INSERT- FUNCTION TO ADD NEW DATA TO THE DB
     // INSERT INTO [table_name] ([columns]) VALUES ([values])
     function insert($tabla, $campos, $valores, $arr_prepare = null) {
         $sql = "INSERT INTO" . $tabla . "(" . $campos . ") VALUES ($valores)";
@@ -69,7 +69,7 @@ class database {
         }
     }
     
-    // DECLARE -UPDATE- FUNCTION TO MODIFY EXISTING DATA IN THE DB
+    // DEFINE -UPDATE- FUNCTION TO MODIFY EXISTING DATA IN THE DB
     // UPDATE [table_name] SET [column] = [value] WHERE [condition]
     function update($tabla, $campos, $filtros, $arr_prepare = null) {
         $sql = "UPDATE" . $tabla . "SET" . $campos . "WHERE" . $filtros;
