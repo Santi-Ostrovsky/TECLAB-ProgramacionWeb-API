@@ -12,7 +12,7 @@ class Productos {
     private $exists = false;
 
     // DEFINE CONSTRUCTOR FOR OBJECT CREATOR
-    function _construct($id) {
+    function _construct($id = null) {
         $db = new database("mysql", "miproyecto", "127.0.0.1", "root", "");
         $response = $db -> select("productos", "id=?", array($id));
 
@@ -25,6 +25,7 @@ class Productos {
             $this -> imagen = $response[0]['imagen-producto'];
             $this -> exists = true;
         }
+        else return false;
     }
 
     // DEFINE FUNCTION TO RENDER PRODUCTS ON SCREEN

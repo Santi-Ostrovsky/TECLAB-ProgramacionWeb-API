@@ -1,19 +1,19 @@
 <?php /* @autor Santiago Ostrovsky */
 
 // TRY CONNECTION TO REMOTE DB THROUGH DYNAMIC CREDENTIALS
-try {
+/*try {
     $conector = new PDO("mysql:dbname=miproyecto;host=127.0.0.1", "root", "");
     echo "Conexión exitosa!";
 } catch (Exception $e) {
     echo "Conexión fallida!" . $e -> getMessage();
-}
+}*/
 
 // DEFINE DATABASE CLASS
 class database {
     private $gbd;
 
     // DEFINE FUNCTION TO ESTABLISH DB CONNECTION
-    function _construct($driver, $database, $host, $user, $pass) {
+    function __construct($driver, $database, $host, $user, $pass) {
         $connection = $driver . ":dbname=" . $database . ";host=$host";
         $this -> gbd = new PDO($connection, $user, $pass);
 
@@ -25,7 +25,7 @@ class database {
     // DEFINE -SELECT- FUNCTION TO EXTRACT DB DATA
     // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [orden] [ASC | DESC] LIMIT [results_amount]
     function select($tabla, $filtros = null, $arr_prepare = null, $orden = null, $limit = null) {
-        $sql = "SELECT * TABLA " . $tabla;
+        $sql = "SELECT * FROM " . $tabla;
 
         // if ($filtros) $sql .= " WHERE " . $filtros;
         if ($filtros != null) $sql .= " WHERE " . $filtros;
@@ -62,7 +62,7 @@ class database {
         if ($resource) return $this -> gbd -> lastInsertId();
         else {
             echo '<pre>';
-            print_r($resource -> errorInfo());
+            print_r($this -> gbd -> errorInfo());
             echo '</pre>';
 
             throw new Exception('Error al insertar los datos.');
@@ -77,10 +77,12 @@ class database {
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
 
-        if ($resource) return true;
+        if ($resource) {
+            return true;
+        }
         else {
             echo '<pre>';
-            print_r($resource -> errorInfo());
+            print_r($this -> gbd -> errorInfo());
             echo '</pre>';
 
             throw new Exception('Error al actualizar los datos.');
