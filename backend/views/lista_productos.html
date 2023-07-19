@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CompuNation | Listado de Productos</title>
-    <meta
-      name="description"
-      content="CompuNation | Listado de Productos existentes en Base de Datos."
-    />
+    <meta name="description" content="CompuNation | Listado de Productos existentes en Base de Datos." />
     <meta name="author" content="Santiago Ostrovsky" />
     <!--  <meta name="keywords" content="keywords separadas por coma"> -->
     <meta name="robots" content="noindex" />
@@ -16,52 +14,65 @@
     <!--  <meta name="copyright" content=""> -->
     <link rel="stylesheet" href="../../assets/css/estilos.css" />
     <link rel="shortcut icon" href="favicon.ico" type="" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav></nav>
+        <nav></nav>
     </header>
     <main>
-      <h1>Listado de Categorías</h1>
+        <h1>Listado de Categorías</h1>
 
-      <!-- CREATE TABLE RENDER -->
-      <div class="tabla">
-        <table>
-          <!-- TABLE HEAD -->
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Precio</th>
-              <th>Imagen</th>
-              <th>Categoría</th>
-            </tr>
-          </thead>
-          <!-- TABLE BODY -->
-          <tbody>
-            <?php foreach ($listaProductos as $producto) { ?>
-            <tr>
-              <td><?php echo $producto['id'] ?></td>
-              <td><?php echo $producto['nombre-producto'] ?></td>
-              <td><?php echo $producto['descripcion-producto'] ?></td>
-              <td><?php echo $producto['precio-producto'] ?></td>
-              <td><?php echo $producto['imagen-producto'] ?></td>
-              <td><?php echo $producto['categoria-id'] ?></td>
-            </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-      </div>
+        <!-- CREATE TABLE RENDER -->
+        <div class="tabla">
+            <table>
+                <!-- TABLE HEAD -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <!-- TABLE BODY -->
+                <tbody>
+                    <?php foreach ($listaProductos as $producto) { ?>
+                    <tr>
+                        <td>
+                            <?php echo $producto['id'] ?>
+                        </td>
+                        <td>
+                            <?php echo $producto['nombre-producto'] ?>
+                        </td>
+                        <td>
+                            <?php echo $producto['descripcion-producto'] ?>
+                        </td>
+                        <td>
+                            <?php echo $producto['precio-producto'] ?>
+                        </td>
+                        <td>
+                            <?php echo $producto['imagen-producto'] ?>
+                        </td>
+                        <td>
+                            <?php echo $producto['categoria-id'] ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
 
-      <a href="../productos.php?add">Agregar Producto</a>
+        <a href="views/productos.html?agregar">Agregar Producto</a>
     </main>
 
     <!-- PIÉ DE PÁGINA -->
     <footer>
-      <!-- AUTOR -->
-      <span class="author">Santiago Ostrovsky</span>
+        <!-- AUTOR -->
+        <span class="author">Santiago Ostrovsky</span>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -12,7 +12,7 @@ class Productos {
     private $exists = false;
 
     // DEFINE CONSTRUCTOR FOR OBJECT CREATOR
-    function _construct($id = null) {
+    function __construct($id = null) {
         $db = new database("mysql", "miproyecto", "127.0.0.1", "root", "");
         $response = $db -> select("productos", "id=?", array($id));
 

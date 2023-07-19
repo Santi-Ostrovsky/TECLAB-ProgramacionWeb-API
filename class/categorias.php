@@ -7,7 +7,7 @@ class Categorias {
     public $nombre;
     private $exists;
 
-    function _construct($id = null) {
+    function __construct($id = null) {
         if ($id != null) {
             // Los condicionales PHP no funcionan como los condicionales JS.
             // En JS, puede usarse la expresión: if (id) {...}, ya que 'id',

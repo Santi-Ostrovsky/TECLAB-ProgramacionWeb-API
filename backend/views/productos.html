@@ -50,6 +50,7 @@
             <div>
                 <section>
                     <form id="form-carga-productos" action="" method="post" autocomplete="on">
+                        <input type="hidden" name="action" value="guardar">
                         <!-- CAMPOS -->
                         <!-- NOMBRE -->
                         <div>
@@ -71,8 +72,16 @@
                         <!-- CATEGORÍA -->
                         <div>
                             <label for="categoria-producto">Categoría</label>
-                            <input type="text" name="categoria-producto" id="categoria-producto"
-                                placeholder="Ej: Monitores">
+                            <input type="search" name="categoria-producto" id="categoria-producto"
+                                placeholder="Monitores">
+                            <!--                             
+                            <select name="categoria-producto" id="categoria-producto" required="">
+                                <?php foreach ($categorias as $categoria){ ?>
+                                <option value="<?php echo $categoria['id'] ?>">
+                                    <?php echo $categoria['nombre'] ?>
+                                </option>
+                                <?php } ?>
+                            </select> -->
                         </div>
                         <!-- IMAGEN -->
                         <div>

@@ -5,7 +5,7 @@ class Autoload {
 
     static public function loadClass($class) {
         $classArr = array();
-        $from = __DIR__.DIRECTORY_SEPARATOR;
+        $from = __DIR__.DIRECTORY_SEPARATOR; // 'class/[nombre_del_archivo]'
 
         $classArr['database'] = $from . "database.php";
         $classArr['Categorias'] = $from . "categorias.php";
@@ -13,7 +13,7 @@ class Autoload {
 
         if (isset($classArr[$class])) {
             if (file_exists($classArr[$class])) include $classArr[$class];
-            else throw new Exception("La clase '$classArr[$class]' es inexistente.");
+            else throw new Exception("La clase ".$classArr[$class]." es inexistente.");
         }
     }
 }
