@@ -21,12 +21,13 @@ class database {
         Revisar:\n\t- Parámetros de acceso;\n\t- Credenciales.");
     }
 
-    // ********************** BASIC  SQL QUERIES **********************
+    // ********************** BASIC SQL QUERIES **********************
     
     // DEFINE -SELECT- FUNCTION TO EXTRACT DB DATA
     // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [order] [ASC | DESC] LIMIT [results_amount]
     function select($tabla, $filtros = null, $arr_prepare = null, $order = null, $limit = null) {
         $sql = "SELECT * FROM " . $tabla;
+
 
         // if ($filtros) $sql .= " WHERE " . $filtros;
         if ($filtros != null) $sql .= " WHERE " . $filtros;
@@ -36,6 +37,9 @@ class database {
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
 
+        // if ($resource) {
+        //     return $resource -> fetchAll(PDO::FETCH_ASSOC);
+        // }
         if ($resource) return $resource -> fetchAll(PDO::FETCH_ASSOC);
         else {
             echo '<pre>';
@@ -48,8 +52,8 @@ class database {
     
     // DEFINE -DELETE- FUNCTION TO REMOVE DB DATA
     // DELETE FROM [table_name] WHERE [condition]
-    function delete($tabla, $filtros = null, $arr_prepare = null) {
-        $sql = "DELETE FROM " . $tabla . " WHERE " . $filtros;
+    function delete($tabla, $condition = null, $arr_prepare = null) {
+        $sql = "DELETE FROM " . $tabla . " WHERE " . $condition;
 
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
@@ -84,7 +88,7 @@ class database {
             throw new Exception('Error al insertar los datos.');
         }
     }
-    
+
     // DEFINE -UPDATE- FUNCTION TO MODIFY EXISTING DATA IN THE DB
     // UPDATE [table_name] SET [column] = [value] WHERE [condition]
     function update($tabla, $campo, $valor, $filtros, $arr_prepare = null) {

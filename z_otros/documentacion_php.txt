@@ -1,0 +1,11 @@
+MANUAL COMPLETO DE php
+https://www.php.net/manual/es/index.php
+
+OBJETO PDO
+https://www.php.net/manual/es/class.pdo.php
+
+FETCH::ASSOC
+https://www.php.net/manual/es/pdo.constants.php#pdo.constants.fetch-assoc
+
+ISSET()
+https://www.php.net/manual/es/pdo.constants.php#pdo.constants.fetch-assoc

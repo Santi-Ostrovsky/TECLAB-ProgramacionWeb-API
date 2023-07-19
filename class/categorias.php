@@ -5,7 +5,7 @@ class Categorias {
 
     protected $id;
     public $nombre;
-    private $exists;
+    private $exists = false;
 
     function __construct($id = null) {
         if ($id != null) {
