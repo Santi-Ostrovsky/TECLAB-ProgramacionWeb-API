@@ -1,0 +1,96 @@
+section.section-head{
+    background-color: black;
+}
+
+section.section-head div.head-logo{
+    display: block;
+    height: 28px;
+}
+
+section.section-head div.head-logo img{
+    width: 126px;
+}
+
+section.section-head div.contenedor-title{
+    color: white;
+    text-align: center;
+}
+
+label{
+    display: block;
+}
+
+section.section-form{
+    text-align: center;
+}
+
+div.botones-accion{
+    padding-top: 26px;
+}
+
+button.btn-cancel{
+    background-color: red;
+    color: white;
+}
+
+button.btn-save{
+    background-color: green;
+    color: white;
+}
+
+button.btn-cancel, button.btn-save{
+    border-width: 1px;
+    border-radius: 30px;
+}
+
+button{
+    padding: 5px 10px 5px 10px;
+}
+
+form input, form select{
+    width: 268px;
+}
+
+form div{
+    margin-top: 20px;
+}
+
+div.autor {
+    padding-top: 30px;
+    font-size: 9px;
+    color: #CCC;
+}
+
+
+table.lista_producto{
+    width: 600px;
+}
+
+table.lista_producto tbody td{
+    text-align: center;
+}
+
+table.lista_producto tbody td img{
+    width: 100px;
+}
+
+.item_producto{
+    display: inline-block;
+    margin-top: 43px;
+}
+
+.item_producto .title_producto{
+    font-weight: bold;
+    color: green;
+}
+
+
+.item_producto .descripcion_producto{
+    color: #CCC;
+    font-size: 12px;
+}
+
+.item_producto .img img{
+    width: 268px;
+    height: 163px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listado de categorias</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <center>
+                <table style="width: 600px;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($categorias as $categoria){ ?>
+                        <tr>
+                            <td style="text-align: center;"><?php echo $categoria['id'] ?></td>
+                            <td style="text-align: center;"><?php echo $categoria['nombre'] ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <a href="http://localhost/MIPROYECTO/backend/categorias.php?accion=agregar">Agergar</a>
+            </center>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PULS-AR</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./assets/css/estilos.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <section class="section-head">
+            <div class="head-logo">
+                <img src="../assets/img/primer_recorte.png" alt="Logo">
+            </div>
+            <div class="contenedor-title">
+                <h1>PULS-AR</h1>
+            </div>
+        </section>
+        <div class="selector">
+            Filtre por categoria:
+            <select id="selector_categoria">
+                <option value="0">(todas)</option>
+                <?php foreach ($categorias as $categoria){ ?>
+                <option value="<?php echo $categoria['id'] ?>"
+                        <?php if (isset($_GET['filtro_categoria']) && $_GET['filtro_categoria'] == $categoria['id']){ ?> selected=""<?php } ?>>
+                    <?php echo $categoria['nombre'] ?>
+                </option>
+                <?php } ?>
+            </select>
+        </div>
+        <div>
+            <?php foreach ($productos as $producto){ ?>
+            <div class="item_producto">
+                <div class="img">
+                    <img src="<?php echo productos::$archivo_url.$producto['imagen'] ?>">
+                </div>
+                <div class="title_producto">
+                    <?php echo $producto['nombre'] ?>
+                </div>
+                <div class="categoria_producto">
+                    <?php echo $producto['nombre_categoria'] ?>
+                </div>
+                <div class="descripcion_producto">
+                    <?php echo $producto['descripcion'] ?>
+                </div>
+            </div>    
+            <?php }
+            echo "<pre>";
+            print_r($productos);
+            echo "</pre>";
+            ?>
+            
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+    </body>
+</html>

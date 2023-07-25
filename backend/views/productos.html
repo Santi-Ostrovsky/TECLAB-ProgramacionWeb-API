@@ -49,33 +49,33 @@
             <!-- FORMULARIO DE CARGA -->
             <div>
                 <section>
-                    <form id="form-carga-productos" action="" method="post" autocomplete="on">
+                    <form id="form-carga-productos" action="" method="post" autocomplete="off">
                         <input type="hidden" name="action" value="guardar">
                         <!-- CAMPOS -->
                         <!-- NOMBRE -->
                         <div>
-                            <label for="nombre-producto">Nombre</label>
-                            <input type="search" name="nombre-producto" id="nombre-producto"
+                            <label for="nombre_producto">Nombre</label>
+                            <input type="search" name="nombre_producto" id="nombre_producto"
                                 placeholder="Ej: Noblex NL3060">
                         </div>
                         <!-- DESCRIPCIÓN -->
                         <div>
-                            <label for="descripcion-producto">Descripción</label>
-                            <textarea name="descripcion-producto" id="descripcion-producto" cols="50" rows="10"
+                            <label for="descripcion_producto">Descripción</label>
+                            <textarea name="descripcion_producto" id="descripcion_producto" cols="50" rows="10"
                                 placeholder="Ej: Monitor último modelo, con diseño innovador, marco minimalista y amplia gama de colores."></textarea>
                         </div>
                         <!-- PRECIO -->
                         <div>
-                            <label for="precio-producto">Precio $</label>
-                            <input type="number" name="precio-producto" id="precio-producto" placeholder="Ej: 2500">
+                            <label for="precio_producto">Precio $</label>
+                            <input type="number" name="precio_producto" id="precio_producto" placeholder="Ej: 2500">
                         </div>
                         <!-- CATEGORÍA -->
                         <div>
-                            <label for="categoria-producto">Categoría</label>
-                            <input type="search" name="categoria-producto" id="categoria-producto"
+                            <label for="categoria_producto">Categoría</label>
+                            <input type="search" name="categoria_producto" id="categoria_producto"
                                 placeholder="Monitores">
                             <!--                             
-                            <select name="categoria-producto" id="categoria-producto" required="">
+                            <select name="categoria_producto" id="categoria_producto" required="">
                                 <?php foreach ($categorias as $categoria){ ?>
                                 <option value="<?php echo $categoria['id'] ?>">
                                     <?php echo $categoria['nombre'] ?>
@@ -85,8 +85,8 @@
                         </div>
                         <!-- IMAGEN -->
                         <div>
-                            <label for="imagen-producto">Imagen</label>
-                            <input type="file" accept="image/*" name="imagen-producto" id="imagen-producto"
+                            <label for="imagen_producto">Imagen</label>
+                            <input type="file" accept="image/*" name="imagen_producto" id="imagen_producto"
                                 enctype="multipart/form-data">
                         </div>
 

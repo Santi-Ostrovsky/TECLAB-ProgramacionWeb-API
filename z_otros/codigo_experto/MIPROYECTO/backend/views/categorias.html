@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PULSAR - Alta Categorias</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../assets/css/estilos.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <section class="section-head">
+            <div class="head-logo">
+                <img src="../../assets/img/primer_recorte.png" alt="Logo">
+            </div>
+            <div class="contenedor-title">
+                <h1>PULS-AR</h1>
+            </div>
+        </section>
+        <section class="section-form">
+            <h2>ALTA CATEGORIA</h2>
+            <form id="form_categoria" method="POST">
+                <input type="hidden" name="accion" value="guardar">
+                <div>
+                    <label for="categoria_nombre">Nombre Categoria</label>
+                    <input type="text" name="categoria_nombre" id="categoria_nombre" required="" placeholder="Nombre Categoria" autocomplete="off">
+                </div>
+                <div class="botones-accion">
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-save">Guardar</button>
+                </div>
+                
+            </form>
+            <div class="autor">
+                <span>Pedro Picapiedras</span>
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="../../assets/js/validaciones.js"></script>
+    </body>
+</html>
