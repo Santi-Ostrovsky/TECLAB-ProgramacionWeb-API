@@ -28,8 +28,6 @@ class database {
     function select($tabla, $filtros = null, $arr_prepare = null, $order = null, $limit = null) {
         $sql = "SELECT * FROM " . $tabla;
 
-
-        // if ($filtros) $sql .= " WHERE " . $filtros;
         if ($filtros != null) $sql .= " WHERE " . $filtros;
         if ($order != null) $sql .= " ORDER BY " . $order;
         if ($limit != null) $sql .= " LIMIT " . $limit;
@@ -37,9 +35,6 @@ class database {
         $resource = $this -> gbd -> prepare($sql);
         $resource -> execute($arr_prepare);
 
-        // if ($resource) {
-        //     return $resource -> fetchAll(PDO::FETCH_ASSOC);
-        // }
         if ($resource) return $resource -> fetchAll(PDO::FETCH_ASSOC);
         else {
             echo '<pre>';
