@@ -22,7 +22,7 @@ class Productos {
     function __construct($id = null) {
         $db = new database(DRIVER, DB, HOST, USER, PASS);
         // $db = new database("mysql", "miproyecto", "127.0.0.1", "root", "");
-        $response = $db -> select(TABLE, "id=?", array($id));
+        $response = $db -> select(TABLE, null, null, "id=?", array($id));
         // $response = $db -> select("productos", "id=?", array($id));
 
         if(isset($response[0]['id'])) {
@@ -89,7 +89,16 @@ class Productos {
     static public function product_select() {
         $db = new database(DRIVER, DB, HOST, USER, PASS);
         // $db = new database("mysql", "miproyecto", "127.0.0.1", "root", "");
-        return $db -> select(TABLE);
+        $join = 'categorias ON categorias.id = productos.categoria_id';
+        $columns = array(
+            "productos.id",
+            "productos.nombre_producto",
+            "productos.descripcion_producto",
+            "productos.precio_producto",
+            "productos.imagen_producto",
+            "categorias.nombre_categoria",
+        );
+        return $db -> select(TABLE, $columns, $join);
         // return $db -> select("productos");
     }
 }

@@ -53,12 +53,21 @@
           <iframe src="backend/productos.php" frameborder="0" width="800px"></iframe>
         </div> -->
 
-        <?php
-        foreach ($productos as $p) {
-            echo '<pre>';
-            print_r($p);
-            echo '</pre>';
-            } ?>
+        <?php foreach ($productos as $p) { ?>
+        <div>
+          <div class="img">
+            <img src="assets/img/new_product.png" alt="imagen_de_producto" />
+          </div>
+          <div></div>
+        </div>
+
+        <!-- <?php
+        echo '<pre>';
+        print_r($p);
+        echo '</pre>';
+        ?> -->
+
+        <?php } ?>
       </main>
       <!-- PIÉ DE PÁGINA -->
       <footer>

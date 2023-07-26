@@ -25,9 +25,15 @@ class database {
     
     // DEFINE -SELECT- FUNCTION TO EXTRACT DB DATA
     // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [order] [ASC | DESC] LIMIT [results_amount]
-    function select($tabla, $filtros = null, $arr_prepare = null, $order = null, $limit = null) {
-        $sql = "SELECT * FROM " . $tabla;
+    function select($tabla, array $columns = null, $join = null, $filtros = null, $arr_prepare = null, $order = null, $limit = null) {
+        
+        $columnSelection = '*';
+        if ($columns != null) 
 
+
+        $sql = "SELECT " . $columnSelection . " FROM " . $tabla;
+
+        if ($join != null) $sql .= " INNER JOIN " . $join;
         if ($filtros != null) $sql .= " WHERE " . $filtros;
         if ($order != null) $sql .= " ORDER BY " . $order;
         if ($limit != null) $sql .= " LIMIT " . $limit;
