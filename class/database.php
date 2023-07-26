@@ -26,10 +26,8 @@ class database {
     // DEFINE -SELECT- FUNCTION TO EXTRACT DB DATA
     // SELECT [columns] FROM [table_name] WHERE [condition] ORDER BY [order] [ASC | DESC] LIMIT [results_amount]
     function select($tabla, array $columns = null, $join = null, $filtros = null, $arr_prepare = null, $order = null, $limit = null) {
-        
         $columnSelection = '*';
-        if ($columns != null) 
-
+        // if ($columns != null) $columnSelection = $columns;
 
         $sql = "SELECT " . $columnSelection . " FROM " . $tabla;
 

@@ -46,7 +46,9 @@
 
       <!-- PRINCIPAL -->
       <main>
+        <div class="img">
         <img src="assets/img/compunation.gif" alt="CompuNation Animated Logo" />
+        </div>
         <!-- <h1 class="title">CompuNation</h1> -->
 
         <!-- <div style="display: flex; align-items: center">
@@ -54,18 +56,16 @@
         </div> -->
 
         <?php foreach ($productos as $p) { ?>
-        <div class="flex-container">
-          <div
-            class="flex-item"
-            style="border: 1px solid #444; border-radius: 25px; width: 300px"
-          >
-            <div class="img">
+        <div class="FlexContainer">
+          <div style="border: 1px solid #444; border-radius: 25px; width: 100%">
+            <!-- <div class="img"> -->
               <img src="assets/img/new_product.png" alt="imagen_de_producto" />
-            </div>
+            <!-- </div> -->
             <div>
               <?php
-            echo '<b>'.$p['nombre_producto'] . '</b><br>'; echo$p['descripcion_producto']
-              . '<br />'; echo '<b>Precio:</b> $' . $p['precio_producto'] . '<br />';
+              echo '<b>'.$p['nombre_producto'] . '</b><br>';
+              echo $p['descripcion_producto']. '<br />';
+              echo '<b>Precio:</b> $' . $p['precio_producto'] . '<br />';
               echo'<b>Categoría:</b> ' . $p['nombre_categoria'] . '<br />'; ?>
             </div>
           </div>
