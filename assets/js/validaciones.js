@@ -54,7 +54,7 @@ $("#form-carga-productos").submit(function (e) {
   const NOMBRE = $.trim($("#nombre-producto").val());
   const DESCRIPCION = $.trim($("#descripcion-producto").val());
   const PRECIO = parseInt($.trim($("#precio-producto").val())); // Remueve letras si hay un número
-  const CATEGORIA = $.trim($("#categoria-producto").val());
+  const CATEGORIA = parseInt($.trim($("#categoria-producto").val()));
   const IMAGEN = $.trim($("#imagen-producto").val());
 
   // Declarar Array (Arreglo) de Errores

@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PULSAR - Alta Producto</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../../assets/css/estilos.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <section class="section-head">
-            <div class="head-logo">
-                <img src="../../assets/img/primer_recorte.png" alt="Logo">
+
+<head>
+    <title>PULSAR - Alta Producto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../assets/css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <section class="section-head">
+        <div class="head-logo">
+            <img src="../../assets/img/primer_recorte.png" alt="Logo">
+        </div>
+        <div class="contenedor-title">
+            <h1>PULS-AR</h1>
+        </div>
+    </section>
+    <section class="section-form">
+        <h2>ALTA PRODUCTO</h2>
+        <form id="form_producto" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <input type="hidden" name="accion" value="agregar">
+            <div>
+                <label for="producto_nombre">Nombre Productos</label>
+                <input type="text" name="producto_nombre" id="producto_nombre" required="" placeholder="Nombre Producto"
+                    autocomplete="off">
             </div>
-            <div class="contenedor-title">
-                <h1>PULS-AR</h1>
+            <div>
+                <label for="producto_categoria">Seleccione categoria</label>
+                <select name="producto_categoria" id="producto_categoria" required="">
+                    <?php foreach ($categorias as $categoria){ ?>
+                    <option value="<?php echo $categoria['id'] ?>">
+                        <?php echo $categoria['nombre'] ?>
+                    </option>
+                    <?php } ?>
+                </select>
             </div>
-        </section>
-        <section class="section-form">
-            <h2>ALTA PRODUCTO</h2>
-            <form id="form_producto" method="POST" enctype="multipart/form-data"  autocomplete="off">
-                <input type="hidden" name="accion" value="agregar">
-                <div>
-                    <label for="producto_nombre">Nombre Productos</label>
-                    <input type="text" name="producto_nombre" id="producto_nombre" required="" placeholder="Nombre Producto" autocomplete="off">
-                </div>
-                <div>
-                    <label for="producto_categoria">Seleccione categoria</label>
-                    <select name="producto_categoria" id="producto_categoria" required="">
-                        <?php foreach ($categorias as $categoria){ ?>
-                        <option value="<?php echo $categoria['id'] ?>"><?php echo $categoria['nombre'] ?></option>
-                        <?php } ?>                         
-                    </select>                    
-                </div>
-                <div>
-                    <label for="imagen_producto">Imagen del producto</label>
-                    <input type="file" name="imagen_producto" id="imagen_producto" autocomplete="off">
-                </div>
-                <div class="botones-accion">
-                    <button type="button" class="btn-cancel">Cancelar</button>
-                    <button type="submit" class="btn-save">Guardar</button>
-                </div>
-                
-            </form>
-            <div class="autor">
-                <span>Pedro Picapiedras</span>
-            </div>    
-        </section>
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-        <script src="../../assets/js/validaciones.js"></script>
-    </body>
+            <div>
+                <label for="imagen_producto">Imagen del producto</label>
+                <input type="file" name="imagen_producto" id="imagen_producto" autocomplete="off">
+            </div>
+            <div class="botones-accion">
+                <button type="button" class="btn-cancel">Cancelar</button>
+                <button type="submit" class="btn-save">Guardar</button>
+            </div>
+
+        </form>
+        <div class="autor">
+            <span>Pedro Picapiedras</span>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="../../assets/js/validaciones.js"></script>
+</body>
+
 </html>

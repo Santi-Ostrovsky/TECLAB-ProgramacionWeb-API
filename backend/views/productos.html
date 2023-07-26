@@ -2,27 +2,26 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CompuNation | Alta Productos</title>
-    <meta name="description" content="Alta de nuevos PRODUCTOS.">
-    <meta name="author" content="Santiago Ostrovsky">
+    <meta name="description" content="Alta de nuevos PRODUCTOS." />
+    <meta name="author" content="Santiago Ostrovsky" />
     <!--  <meta name="keywords" content="keywords separadas por coma"> -->
-    <meta name="robots" content="noindex">
-    <meta name="robots" content="nofollow">
+    <meta name="robots" content="noindex" />
+    <meta name="robots" content="nofollow" />
     <meta name="theme-color" content="#000000" />
     <!--  <meta name="copyright" content=""> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/estilos.css">
-    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/estilos.css" />
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="" />
 </head>
 
 <!-- CUERPO DEL DOCUMENTO -->
 
 <body>
-
     <div class="box">
         <!-- ENCABEZADO -->
         <header>
@@ -30,33 +29,31 @@
             <div>
                 <nav id="nav-form-categorias" class="nav">
                     <!-- HOME -->
-                    <div class="nav-item">
-                        <a id="home" href="../../views/home.html">Home</a>
-                    </div>
+                    <a href="../../index.php">Home</a>
                     <!-- FORM CATEGORÍAS -->
-                    <div class="nav-item">
-                        <a id="form-categorias" href="categorias.html">Alta de Categorías</a>
-                    </div>
+                    <a href="categorias.html">Alta de Categorías</a>
+                    <!-- FORM PRODUCTOS -->
+                    <span style="text-decoration: underline;">Alta de Productos</span>
                 </nav>
             </div>
         </header>
 
         <!-- PRINCIPAL -->
         <main>
-            <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo">
+            <img src="../../assets/img/compunation.gif" alt="CompuNation Animated Logo" />
             <h1 class="title">Carga de Productos al sistema</h1>
 
             <!-- FORMULARIO DE CARGA -->
             <div>
                 <section>
                     <form id="form-carga-productos" action="" method="post" autocomplete="off">
-                        <input type="hidden" name="action" value="guardar">
+                        <input type="hidden" name="action" value="guardar" />
                         <!-- CAMPOS -->
                         <!-- NOMBRE -->
                         <div>
                             <label for="nombre_producto">Nombre</label>
                             <input type="search" name="nombre_producto" id="nombre_producto"
-                                placeholder="Ej: Noblex NL3060">
+                                placeholder="Ej: Noblex NL3060" />
                         </div>
                         <!-- DESCRIPCIÓN -->
                         <div>
@@ -67,36 +64,37 @@
                         <!-- PRECIO -->
                         <div>
                             <label for="precio_producto">Precio $</label>
-                            <input type="number" name="precio_producto" id="precio_producto" placeholder="Ej: 2500">
+                            <input type="number" name="precio_producto" id="precio_producto" placeholder="Ej: 2500" />
                         </div>
                         <!-- CATEGORÍA -->
                         <div>
                             <label for="categoria_producto">Categoría</label>
-                            <input type="search" name="categoria_producto" id="categoria_producto"
-                                placeholder="Monitores">
-                            <!--                             
-                            <select name="categoria_producto" id="categoria_producto" required="">
-                                <?php foreach ($categorias as $categoria){ ?>
-                                <option value="<?php echo $categoria['id'] ?>">
-                                    <?php echo $categoria['nombre'] ?>
-                                </option>
-                                <?php } ?>
+                            <input type="number" name="categoria_producto" id="categoria_producto" min="1" />
+                            <!-- <select name="categoria_producto" id="categoria_producto">
+                            <?php foreach ($listaCategorias as $categoria) { ?>
+                            <option value="<?php echo $categoria['id'] ?>">
+                            <?php echo $categoria['nombre_categoria'] ?>
+                            </option>
+                            <?php } ?>
                             </select> -->
+                            <iframe src="http://localhost/MIPROYECTO/backend/categorias.php" frameborder="0"
+                                height="300px"></iframe>
                         </div>
                         <!-- IMAGEN -->
                         <div>
                             <label for="imagen_producto">Imagen</label>
                             <input type="file" accept="image/*" name="imagen_producto" id="imagen_producto"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" />
                         </div>
 
                         <!-- FORM CONTROL -->
                         <div id="form-producto-botones">
-                            <input id="productos-reset" class="button" type="reset">
-                            <button id="categorias-cancelar" class="button" type="button">Cancelar</button>
-                            <input id="productos-submit" class="button" type="submit">
+                            <input id="productos-reset" class="button" type="reset" />
+                            <button id="categorias-cancelar" class="button" type="button">
+                                Cancelar
+                            </button>
+                            <input id="productos-submit" class="button" type="submit" />
                         </div>
-
                     </form>
                 </section>
             </div>
@@ -111,7 +109,6 @@
         <!-- SCRIPTS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
-
     </div>
 </body>
 
