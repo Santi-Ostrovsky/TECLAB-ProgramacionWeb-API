@@ -5,19 +5,17 @@
   font-family: "Oxanium", cursive, sans-serif;
 }
 
-body {
+body,
+table {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* background-image: url(../img/bg.jpg); */
 }
 
 .box {
-  height: 85vh;
-  width: 30vw;
   min-width: 450px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: #ffff;
   backdrop-filter: blur(5px);
   border-radius: 50px;

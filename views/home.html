@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CompuNation | Home</title>
-    <meta name="description" content="Home">
-    <meta name="author" content="Santiago Ostrovsky">
+    <meta name="description" content="Home" />
+    <meta name="author" content="Santiago Ostrovsky" />
     <!--  <meta name="keywords" content="keywords separadas por coma"> -->
-    <meta name="robots" content="noindex">
-    <meta name="robots" content="nofollow">
+    <meta name="robots" content="noindex" />
+    <meta name="robots" content="nofollow" />
     <meta name="theme-color" content="#000000" />
     <!--  <meta name="copyright" content=""> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/estilos.css">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/estilos.css" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="" />
+  </head>
 
-<!-- CUERPO DEL DOCUMENTO -->
+  <!-- CUERPO DEL DOCUMENTO -->
 
-<body>
-
+  <body>
     <div class="box">
-        <!-- ENCABEZADO -->
-        <header>
-            <!-- BARRA DE NAVEGACIÓN -->
-            <div class="nav">
-                <nav id="nav-form-categorias">
-                    <!-- HOME -->
-                    <span style="text-decoration: underline;">Home</span>
-                    <!-- FORM CATEGORÍAS -->
-                    <a class="nav-item" href="backend/views/categorias.html">Alta de Categorías</a>
-                    <!-- FORM PRODUCTOS -->
-                    <a class="nav-item" href="backend/views/productos.html">Alta de Productos</a>
-                </nav>
-            </div>
-        </header>
+      <!-- ENCABEZADO -->
+      <header>
+        <!-- BARRA DE NAVEGACIÓN -->
+        <div class="nav">
+          <nav id="nav-form-categorias">
+            <!-- HOME -->
+            <span style="text-decoration: underline">Home</span>
+            <!-- FORM CATEGORÍAS -->
+            <a class="nav-item" href="backend/views/categorias.html"
+              >Alta de Categorías</a
+            >
+            <!-- FORM PRODUCTOS -->
+            <a class="nav-item" href="backend/views/productos.html"
+              >Alta de Productos</a
+            >
+          </nav>
+        </div>
+      </header>
 
-        <!-- PRINCIPAL -->
-        <main>
-            <img src="assets/img/compunation.gif" alt="CompuNation Animated Logo">
-            <h1 class="title">HOME</h1>
-        </main>
+      <!-- PRINCIPAL -->
+      <main>
+        <img src="assets/img/compunation.gif" alt="CompuNation Animated Logo" />
+        <h1 class="title">CompuNation</h1>
 
-        <!-- PIÉ DE PÁGINA -->
-        <footer>
-            <!-- AUTOR -->
-            <span class="author">Santiago Ostrovsky</span>
-        </footer>
+        <!-- <div style="display: flex; align-items: center">
+          <iframe src="backend/productos.php" frameborder="0" width="800px"></iframe>
+        </div> -->
 
+        <?php
+        foreach ($productos as $p) {
+            echo '<pre>';
+            print_r($p);
+            echo '</pre>';
+            } ?>
+      </main>
+      <!-- PIÉ DE PÁGINA -->
+      <footer>
+        <!-- AUTOR -->
+        <span class="author">Santiago Ostrovsky</span>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
