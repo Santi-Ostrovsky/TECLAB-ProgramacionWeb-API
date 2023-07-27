@@ -19,7 +19,7 @@ $("#form-carga-categorias").submit(function (e) {
   // Anular recarga del sitio
   e.preventDefault();
 
-  const CATEGORIA = $("#nombre-categoria").val();
+  const CATEGORIA = $("#nombre_categoria").val();
 
   //    if ($.trim(CATEGORIA) === '') {[...]}
   //     VALORES FALSY:
@@ -51,11 +51,11 @@ $("#form-carga-productos").submit(function (e) {
   e.preventDefault();
 
   // Definir constantes por cada campo del form
-  const NOMBRE = $.trim($("#nombre-producto").val());
-  const DESCRIPCION = $.trim($("#descripcion-producto").val());
-  const PRECIO = parseInt($.trim($("#precio-producto").val())); // Remueve letras si hay un número
-  const CATEGORIA = parseInt($.trim($("#categoria-producto").val()));
-  const IMAGEN = $.trim($("#imagen-producto").val());
+  const NOMBRE = $.trim($("#nombre_producto").val());
+  const DESCRIPCION = $.trim($("#descripcion_producto").val());
+  const PRECIO = parseInt($.trim($("#precio_producto").val())); // Remueve letras si hay un número
+  const CATEGORIA = parseInt($.trim($("#categoria_producto").val()));
+  const IMAGEN = $.trim($("#imagen_producto").val());
 
   // Declarar Array (Arreglo) de Errores
   const ERRORES = [];
